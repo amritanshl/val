@@ -3,99 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposal_v1.0.exe</title>
+    <title>Harshita's 1-Year Review & The Big Question</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
         
-        /* Vintage Marquee Animation */
+        h1, h2, .handwriting {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Marquee Animation */
         .marquee-container {
+            display: flex;
             overflow: hidden;
             white-space: nowrap;
-            position: relative;
         }
         
         .marquee-text {
-            display: inline-block;
-            animation: scroll-left 15s linear infinite;
+            animation: scroll 15s linear infinite;
         }
 
-        @keyframes scroll-left {
-            0% { transform: translateX(100vw); }
-            100% { transform: translateX(-100%); }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Prevent button interaction on mobile touch for the 'No' button */
-        #no-btn {
-            transition: all 0.2s ease;
+        /* Transition Effects */
+        .step {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .step.active {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating Hearts Background */
+        .bg-hearts {
+            background-color: #fce7f3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23db2777' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex flex-col overflow-hidden">
+<body class="bg-hearts min-h-screen flex flex-col items-center justify-center text-gray-800">
 
-    <div class="bg-yellow-400 border-b-4 border-black py-2 font-bold text-black uppercase tracking-widest marquee-container">
-        <div class="marquee-text">
-            ⚠️ WARNING: EXTREME ROMANCE DETECTED ⚠️ SYSTEM OVERLOAD ⚠️ PREPARE FOR SUDDEN AFFECTION ⚠️
+    <div class="fixed top-0 left-0 w-full bg-red-600 text-white border-b-4 border-red-800 py-2 z-50">
+        <div class="marquee-container">
+            <div class="marquee-text font-bold text-lg uppercase tracking-widest px-4">
+                ❤️ HARSHITA HANI ❤️ 1 YEAR TOGETHER IN BOKARO ❤️ WARNING: EXTREME LOVE DETECTED ❤️ BETTER THAN A DHONI SIXER ❤️ HARSHITA HANI ❤️ 1 YEAR TOGETHER IN BOKARO ❤️ WARNING: EXTREME LOVE DETECTED ❤️ BETTER THAN A DHONI SIXER ❤️
+            </div>
         </div>
     </div>
 
-    <main class="flex-grow flex items-center justify-center p-4">
+    <main class="w-full max-w-lg p-4 mt-12 relative">
         
-        <div class="bg-white rounded-3xl shadow-2xl border-4 border-black max-w-md w-full p-6 text-center relative z-10">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-gray-900 p-6 md:p-8 text-center relative overflow-hidden">
             
-            <div id="question-state">
-                <h1 class="text-4xl font-extrabold text-pink-600 mb-6 drop-shadow-sm">
-                    Will you be my Valentine?
-                </h1>
+            <div class="w-full bg-gray-200 h-2 mb-6 rounded-full">
+                <div id="progress-bar" class="bg-red-500 h-2 rounded-full transition-all duration-500" style="width: 25%"></div>
+            </div>
 
-                <div class="bg-gray-100 rounded-xl p-4 mb-8 border-2 border-gray-200 text-left">
-                    <h3 class="text-xs font-bold text-gray-500 uppercase mb-2 tracking-wide">Official Boyfriend Review</h3>
+            <div id="step-1" class="step active">
+                <h1 class="text-3xl text-red-600 mb-2">Happy Anniversary, Hani!</h1>
+                <p class="text-gray-500 mb-6 text-sm">Reviewing 1 Year of Us in Bokaro</p>
+
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 mb-6 text-left">
+                    <h3 class="font-bold text-gray-700 uppercase text-xs tracking-wider mb-3">Annual Boyfriend Performance</h3>
                     
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm">Snack Retrieval</span>
-                        <div class="text-yellow-500">
-                            ★★★★★
-                        </div>
+                    <div class="mb-3">
+                        <p class="text-sm font-semibold">Cuteness Level</p>
+                        <div class="text-yellow-500 text-lg">★★★★★</div>
                     </div>
-                    
-                    <div class="flex justify-between items-center">
-                        <span class="font-semibold text-sm">Listening while gaming</span>
-                        <div class="text-yellow-500 flex">
-                            ★★<span class="text-gray-300">★★★</span>
-                        </div>
+
+                    <div class="mb-3">
+                        <p class="text-sm font-semibold">Handling Hani's Mood Swings</p>
+                        <div class="text-yellow-500 text-lg">★★★★<span class="text-gray-300">★</span></div>
+                        <p class="text-xs text-gray-400 italic">(Room for improvement? Never!)</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm font-semibold">Tolerating Cricket Obsession</p>
+                        <div class="text-yellow-500 text-lg">★★★★★</div>
                     </div>
                 </div>
 
-                <div class="flex justify-center gap-4 relative h-16">
-                    <button id="yes-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-200 border-2 border-black">
-                        YES!
+                <button onclick="nextStep(2)" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all">
+                    Next: The Big Test ➡️
+                </button>
+            </div>
+
+            <div id="step-2" class="step">
+                <h2 class="text-2xl text-blue-600 mb-4">The Ultimate Question...</h2>
+                <div class="mb-6">
+                    <img src="https://media.giphy.com/media/l2R0eYcNq9rJUsVAA/giphy.gif" alt="Cricket" class="w-full h-40 object-cover rounded-lg mb-4 border-2 border-blue-200">
+                    <p class="font-bold text-lg">Who do you love MORE?</p>
+                    <p class="text-xs text-gray-400">(Be careful, Hani...)</p>
+                </div>
+
+                <div class="flex flex-col gap-4 relative h-32 justify-center">
+                    <button onclick="nextStep(3)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl shadow-lg border-b-4 border-green-700 active:border-b-0 active:mt-1 z-20">
+                        YOU (Obviously) ❤️
                     </button>
-                    
-                    <button id="no-btn" class="bg-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg border-2 border-black cursor-not-allowed">
-                        NO
+
+                    <button id="dhoni-btn" class="bg-blue-600 text-white font-bold py-2 rounded-xl shadow-lg text-sm border-b-4 border-blue-800 absolute w-full transition-all duration-100 ease-out z-10" style="top: 60px;">
+                        MS Dhoni 🏏
                     </button>
                 </div>
             </div>
 
-            <div id="success-state" class="hidden">
-                <img src="https://media.giphy.com/media/xT0GqFhyNd0Mw/giphy.gif" alt="Excited Dog" class="w-full rounded-xl border-2 border-black mb-4 h-48 object-cover">
+            <div id="step-3" class="step">
+                <h1 class="text-4xl text-pink-600 mb-6 drop-shadow-md leading-tight">Will You Marry Me?</h1>
                 
-                <h2 class="text-3xl font-black text-purple-600 mb-2">I KNEW IT!</h2>
-                <p class="text-gray-600 mb-6">You have chosen... wisely.</p>
+                <p class="text-gray-600 mb-8 px-4">
+                    We've survived 1 year in Banglore. <br>
+                    .<br>
+                    <span class="font-bold text-gray-800">Let's make it forever, Harshita?</span>
+                </p>
 
-                <div class="border-t-2 border-dashed border-gray-300 pt-6 mt-4">
-                    <p class="text-sm font-bold text-gray-500 mb-3">YOUR REWARD:</p>
-                    <div id="coupon-display" class="bg-yellow-100 border-2 border-yellow-400 text-yellow-800 p-4 rounded-lg font-mono text-sm font-bold mb-4 min-h-[4rem] flex items-center justify-center">
-                        Click below to claim!
+                <div class="flex justify-center gap-4 h-20 items-start relative">
+                    <button onclick="acceptProposal()" class="bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-xl py-4 px-10 rounded-full shadow-xl transform hover:scale-110 transition duration-200 border-4 border-white ring-4 ring-pink-300">
+                        YES! 💍
+                    </button>
+                    
+                    <button id="no-btn" class="bg-gray-300 text-gray-600 font-bold py-3 px-6 rounded-full absolute right-4 top-2 text-sm">
+                        No
+                    </button>
+                </div>
+            </div>
+
+            <div id="step-4" class="step">
+                <h1 class="text-4xl text-purple-600 mb-4 animate-bounce">SHE SAID YES! 💍</h1>
+                <img src="https://media.giphy.com/media/TdfyKrN7HGTIY/giphy.gif" alt="Celebration" class="w-full rounded-xl border-4 border-purple-200 mb-6">
+                
+                <p class="text-lg font-bold text-gray-700 mb-6">
+                    Future Mrs. Harshita! <br>
+                    <span class="text-sm font-normal text-gray-500">I promise to always listen (even while gaming).</span>
+                </p>
+
+                <div class="border-t-2 border-dashed border-gray-300 pt-6">
+                    <p class="text-xs font-bold text-gray-400 mb-2">YOUR ENGAGEMENT GIFT:</p>
+                    <div id="coupon-display" class="bg-purple-100 border-2 border-purple-300 text-purple-800 p-4 rounded-lg font-mono font-bold mb-3 min-h-[3.5rem] flex items-center justify-center text-sm">
+                        Click to generate!
                     </div>
-                    <button onclick="generateCoupon()" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-lg transition shadow border-b-4 border-blue-700 active:border-b-0 active:mt-1">
-                        Generate Coupon
+                    <button onclick="generateCoupon()" class="w-full bg-gray-800 hover:bg-black text-white font-bold py-2 rounded-lg">
+                        Get Coupon
                     </button>
                 </div>
             </div>
@@ -104,91 +172,103 @@
     </main>
 
     <script>
-        const yesBtn = document.getElementById('yes-btn');
-        const noBtn = document.getElementById('no-btn');
-        const questionState = document.getElementById('question-state');
-        const successState = document.getElementById('success-state');
-        const couponDisplay = document.getElementById('coupon-display');
-
-        // --- THE CHAOS: RUNAWAY 'NO' BUTTON ---
-        function moveButton() {
-            // Get viewport dimensions
-            const maxWidth = window.innerWidth - noBtn.offsetWidth;
-            const maxHeight = window.innerHeight - noBtn.offsetHeight;
-
-            // Generate random coordinates
-            const randomX = Math.floor(Math.random() * maxWidth);
-            const randomY = Math.floor(Math.random() * maxHeight);
-
-            // Apply new position
-            noBtn.style.position = 'fixed'; // Breaks it out of the flex container
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
-            
-            // Add a funny rotation
-            const randomRot = Math.floor(Math.random() * 40) - 20;
-            noBtn.style.transform = `rotate(${randomRot}deg)`;
+        // Progress Bar Logic
+        function updateProgress(step) {
+            const width = (step / 4) * 100;
+            document.getElementById('progress-bar').style.width = width + '%';
         }
 
-        // Trigger on mouseover (desktop) and click (mobile attempt)
-        noBtn.addEventListener('mouseover', moveButton);
-        noBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Just in case they actually catch it
-            moveButton();
+        // Step Navigation
+        function nextStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            
+            // Show target step
+            const target = document.getElementById(`step-${stepNumber}`);
+            target.classList.add('active');
+            
+            updateProgress(stepNumber);
+
+            // Special effect for entering Proposal mode
+            if(stepNumber === 3) {
+                confetti({ particleCount: 50, spread: 50, origin: { y: 0.8 }, colors: ['#ff0000', '#ffccd5'] });
+            }
+        }
+
+        // --- THE DHONI BUTTON (Runs Away) ---
+        const dhoniBtn = document.getElementById('dhoni-btn');
+        const dhoniContainer = dhoniBtn.parentElement;
+        
+        dhoniBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (dhoniContainer.offsetWidth - dhoniBtn.offsetWidth);
+            const y = Math.random() * (dhoniContainer.offsetHeight - dhoniBtn.offsetHeight);
+            dhoniBtn.style.position = 'absolute';
+            dhoniBtn.style.left = `${x}px`;
+            dhoniBtn.style.top = `${y}px`;
+        });
+        
+        // Mobile support for Dhoni button
+        dhoniBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const x = Math.random() * (dhoniContainer.offsetWidth - dhoniBtn.offsetWidth);
+            const y = Math.random() * (dhoniContainer.offsetHeight - dhoniBtn.offsetHeight);
+            dhoniBtn.style.position = 'absolute';
+            dhoniBtn.style.left = `${x}px`;
+            dhoniBtn.style.top = `${y}px`;
+            alert("⚠️ ERROR: You can't love Dhoni more than me! Try the other button.");
         });
 
-        // --- THE CELEBRATION: 'YES' BUTTON ---
-        yesBtn.addEventListener('click', () => {
-            // Swap screens
-            questionState.classList.add('hidden');
-            successState.classList.remove('hidden');
+        // --- THE MARRIAGE 'NO' BUTTON (Runs Away) ---
+        const noBtn = document.getElementById('no-btn');
+        
+        function moveNoBtn() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = `${Math.max(20, x)}px`;
+            noBtn.style.top = `${Math.max(20, y)}px`;
+            noBtn.innerText = ["Nope", "Cant Click", "Try Again", "Err 404"][Math.floor(Math.random()*4)];
+        }
 
-            // Trigger Confetti
-            fireConfetti();
-        });
+        noBtn.addEventListener('mouseover', moveNoBtn);
+        noBtn.addEventListener('click', (e) => { e.preventDefault(); moveNoBtn(); });
 
-        function fireConfetti() {
-            const duration = 3 * 1000;
+        // --- ACCEPT PROPOSAL ---
+        function acceptProposal() {
+            nextStep(4);
+            launchMassiveConfetti();
+        }
+
+        function launchMassiveConfetti() {
+            const duration = 5 * 1000;
             const animationEnd = Date.now() + duration;
             const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-            const randomInRange = (min, max) => Math.random() * (max - min) + min;
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
 
             const interval = setInterval(function() {
                 const timeLeft = animationEnd - Date.now();
-
-                if (timeLeft <= 0) {
-                    return clearInterval(interval);
-                }
+                if (timeLeft <= 0) return clearInterval(interval);
 
                 const particleCount = 50 * (timeLeft / duration);
-                // Since particles fall down, start a bit higher than random
                 confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
                 confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
             }, 250);
         }
 
-        // --- COUPON GENERATOR ---
+        // --- COUPONS ---
         const coupons = [
-            "🎟️ One Free Foot Massage (15 min limit)",
-            "🍔 Dinner where I pick the place (no complaints)",
-            "🎮 You get the Player 1 controller tonight",
-            "🧹 I do the dishes for 24 hours",
-            "🍿 Movie Night: Your choice of genre",
-            "🐶 I walk the dog (even if it's raining)",
-            "🍫 One emergency chocolate bar delivery"
+            "🍕 Unlimited Pizza Date in Bokaro",
+            "🏏 I watch 1 full match with you (No phone)",
+            "💍 1 Get Out of Jail Free Card",
+            "💆‍♀️ Head Massage (Duration: Until hands hurt)",
+            "🤫 I admit I was wrong (One time use)"
         ];
 
         function generateCoupon() {
-            const randomIndex = Math.floor(Math.random() * coupons.length);
-            couponDisplay.innerHTML = coupons[randomIndex];
-            
-            // Small confetti burst on coupon generation
-            confetti({
-                particleCount: 30,
-                spread: 50,
-                origin: { y: 0.7 }
-            });
+            const rnd = Math.floor(Math.random() * coupons.length);
+            document.getElementById('coupon-display').innerText = coupons[rnd];
+            confetti({ particleCount: 30, spread: 60, origin: { y: 0.8 } });
         }
     </script>
 </body>
